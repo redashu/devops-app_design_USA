@@ -29,3 +29,63 @@ ashu
 [ashu@ip-172-31-23-52 ~]$
 ```
 
+### clone java webapp to personal user 
+
+```
+git clone  https://github.com/redashu/ashu-walm-mvnweb.git
+Cloning into 'ashu-walm-mvnweb'...
+remote: Enumerating objects: 118, done.
+remote: Counting objects: 100% (27/27), done.
+remote: Compressing objects: 100% (21/21), done.
+remote: Total 118 (delta 11), reused 4 (delta 4), pack-reused 91
+Receiving objects: 100% (118/118), 16.77 KiB | 2.79 MiB/s, done.
+Resolving deltas: 100% (37/37), done.
+[ashu@ip-172-31-23-52 ~]$ ls
+ashu-walm-mvnweb
+[ashu@ip-172-31-23-52 ~]$ 
+
+
+```
+
+### 
+
+```
+[ashu@ip-172-31-23-52 ~]$ ls
+ashu-walm-mvnweb
+[ashu@ip-172-31-23-52 ~]$ cd  ashu-walm-mvnweb/
+[ashu@ip-172-31-23-52 ashu-walm-mvnweb]$ ls
+azure-pipelines.yml  pom.xml  README.md  src
+[ashu@ip-172-31-23-52 ashu-walm-mvnweb]$ 
+
+
+```
+
+### compiling and building code using maven 
+
+```
+4  cd  ashu-walm-mvnweb/
+    5  ls
+    6  mvn install 
+    7  ls
+    8  ls target/
+
+```
+
+### Introduction to azure devops tool -- 
+
+<img src="az1.png">
+
+### azure devops project has 5 things 
+
+<img src="az2.png">
+
+### importing github repo to azure repo 
+
+<img src="az3.png">
+
+### azure devops pipeline 
+
+<img src="az4.png">
+
+
+
