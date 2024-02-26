@@ -87,5 +87,18 @@ azure-pipelines.yml  pom.xml  README.md  src
 
 <img src="az4.png">
 
+### azure devops resources allocation options
+
+<img src="az5.png">
+
+### azure devops options to run josb 
+
+<img src="az6.png">
+
+### setting done for azure devops agent
+
+<img src="az7.png">
+
+
 
 
