@@ -71,7 +71,7 @@ resource "aws_instance" "ashuvm1" {
         url: "https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.86/bin/apache-tomcat-9.0.86.tar.gz"
         dest: "/tmp/apache-tomcat.tar.gz"
 
-    - name: 
+    - name:  installing jdk 
       yum:
        name: java-1.8*
        state: present
@@ -85,8 +85,17 @@ resource "aws_instance" "ashuvm1" {
       
     - name: Start Tomcat service
       command: "chmod 755 /opt/apache-tomcat-9.0.86/ -R"
+
     - name: Start Tomcat service
       command: "nohup /opt/apache-tomcat-9.0.86/bin/startup.sh"
+
+    - name: copy war file target tomcat server
+      copy:
+        src: /tmp/ashuwar/ashuwebjava.war
+        dest: /opt/apache-tomcat-9.0.86/webapps/ashuwebjava.war
+
+
+
 ```
 
 ### azure pipeline yaml 
@@ -118,6 +127,10 @@ stages:
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         goals: 'package'
+    - script:  |
+        echo 'copy war file to somewhere tmp'
+        mkdir -p /tmp/ashuwar/
+        cp -rf target/ashuwebjava.war  /tmp/ashuwar/
 - stage: createInfra
   jobs:
   - job: test_terraform
